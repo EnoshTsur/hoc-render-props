@@ -20,6 +20,15 @@ const PView = ({ isToggleOn, handleToggle, }) => (
 const WithH1 = toggle(H1View)
 const WithA = toggle(AView)
 const WithP = toggle(PView)
+
+const WithH3 = toggle(({ isToggleOn, handleToggle}) => (
+         <div>
+            <h3>{`${isToggleOn}`}</h3>
+            <button onClick={handleToggle}>Click ME!</button>
+        </div>
+    )
+)
+
 function App() {
 
   return (
@@ -27,6 +36,7 @@ function App() {
         <WithH1 />
         <WithA />
         <WithP />
+        <WithH3 />
    </div>
   );
 }
